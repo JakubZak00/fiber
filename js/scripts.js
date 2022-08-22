@@ -53,13 +53,14 @@ import { Project1, Project2, Project3, Project4, Project5, Project6 } from './da
 
 const projectAll = [Project1, Project2, Project3, Project4, Project5, Project6]
 
-//// Portfolio
+//// Portfolio function
 
 let num = 0
 let id = 0
 const rowProject = document.querySelector('.rowProject')
 const projectTemp = document.querySelector('.projectTemp')
 const portfolio = document.querySelector('.portfolio')
+const portfolioItem = document.getElementsByClassName('portfolio-item')
 
 const createProjectAll = () => {
 	for (const pro of projectAll) {
@@ -105,5 +106,5 @@ const createFullProject = (name, jpg, text, investor) => {
 	num++
 }
 
-createProjectAll()
-createFullProjectAll()
+document.addEventListener('DOMContentLoaded', createProjectAll)
+portfolioItem.addEventListener('click', createFullProjectAll())
